@@ -1,0 +1,18 @@
+.example {
+  background-color: #363f4d;
+  border: none;
+  color: #fff;
+  font-size: 14;
+  padding: 10px 30px;
+  margin-top: 30px;
+}
+
+.example:hover {
+  background-color: #a749ff;
+}
+
+p {
+  color: #fff;
+  font-weight: 500;
+  font-size: 14px;
+}

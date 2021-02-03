@@ -1,16 +1,66 @@
 import PropTypes from "prop-types";
-import React, { Fragment } from "react";
-import { Link } from "react-router-dom";
+import React, { Fragment, useState, useEffect } from "react";
+import { Link, useHistory } from "react-router-dom";
 import MetaTags from "react-meta-tags";
-import { connect } from "react-redux";
+import { connect, useSelector, useDispatch } from "react-redux";
 import { BreadcrumbsItem } from "react-breadcrumbs-dynamic";
 import { getDiscountPrice } from "../../helpers/product";
 import LayoutOne from "../../layouts/LayoutOne";
 import Breadcrumb from "../../wrappers/breadcrumb/Breadcrumb";
 
+import AddCardModal from "./AddCardModal"
+
+import {createTransaction} from '../../redux/actions/apiActions'
+
 const Checkout = ({ location, cartItems, currency }) => {
+  const dispatch = useDispatch();
+  const history = useHistory()
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [cardData, setCardData] = useState({
+    cardNumber: '',
+    expireDate: '12/23',
+    cvv: '111'
+  })
+
+  // TODO: traer el carrito para obetener la onfi de los productos y precio total para enviarlos a la creacionn de TRX *DONE*
+  const {createTransaction: newTransaction} = useSelector((state) => state.api)
+
   const { pathname } = location;
   let cartTotalPrice = 0;
+
+  const totalPrice1 = cartItems.reduce((acc, el) => {
+    acc += el.price * el.quantity - el.discount * el.quantity
+    return acc;
+  }, 0)
+
+  // TODO: DEFINIR como ir a buscar el id de usario para crear la TRX *DONE*
+  
+  const onClickPay = () => {
+    // TODO: validaciones y pasar params a createTransaction
+    if (cardData.cardNumber.length < 16) {
+      alert('You must place your card number first')
+      return 
+    }
+    dispatch(createTransaction({
+      cardNumber: cardData.cardNumber,
+      title: 'clothes',
+      type: 'e-commerce',
+      amount: -totalPrice1,
+    }))
+  }
+
+
+  useEffect(() => {
+    // TODO despues de crear la transaction se debe redireccionar a una nueva page *DONE*
+    // donde se monstrará el mensaje correspondiente (compra realizada o rechazada)
+    if (newTransaction) {
+      history.push('/payment-status')
+    }
+
+  }, [newTransaction, history])
+
+
+
 
   return (
     <Fragment>
@@ -48,13 +98,15 @@ const Checkout = ({ location, cartItems, currency }) => {
                           <input type="text" />
                         </div>
                       </div>
-                      <div className="col-lg-12">
+                      {/*  */}
+                      {/* <div className="col-lg-12">
                         <div className="billing-info mb-20">
                           <label>Company Name</label>
                           <input type="text" />
                         </div>
-                      </div>
-                      <div className="col-lg-12">
+                      </div> */}
+                      {/*  */}
+                      {/* <div className="col-lg-12">
                         <div className="billing-select mb-20">
                           <label>Country</label>
                           <select>
@@ -66,7 +118,7 @@ const Checkout = ({ location, cartItems, currency }) => {
                             <option>Barbados</option>
                           </select>
                         </div>
-                      </div>
+                      </div> */}
                       <div className="col-lg-12">
                         <div className="billing-info mb-20">
                           <label>Street Address</label>
@@ -113,7 +165,7 @@ const Checkout = ({ location, cartItems, currency }) => {
                       </div>
                     </div>
 
-                    <div className="additional-info-wrap">
+                    {/* <div className="additional-info-wrap">
                       <h4>Additional information</h4>
                       <div className="additional-info">
                         <label>Order notes</label>
@@ -123,7 +175,7 @@ const Checkout = ({ location, cartItems, currency }) => {
                           defaultValue={""}
                         />
                       </div>
-                    </div>
+                    </div> */}
                   </div>
                 </div>
 
@@ -198,7 +250,10 @@ const Checkout = ({ location, cartItems, currency }) => {
                       <div className="payment-method"></div>
                     </div>
                     <div className="place-order mt-25">
-                      <button className="btn-hover">Place Order</button>
+                      <button className="btn-hover" onClick={() => setIsModalOpen(true)}>Add Card </button>
+                    </div>
+                    <div className="place-order mt-25">
+                      <button className="btn-hover" onClick={() => onClickPay()}>Pay</button>
                     </div>
                   </div>
                 </div>
@@ -222,6 +277,12 @@ const Checkout = ({ location, cartItems, currency }) => {
             )}
           </div>
         </div>
+         <AddCardModal
+          show={isModalOpen}
+          onHide={() => setIsModalOpen(false)}
+          cardData={cardData}
+          setCardData={setCardData}
+        />
       </LayoutOne>
     </Fragment>
   );
@@ -236,7 +297,7 @@ Checkout.propTypes = {
 const mapStateToProps = state => {
   return {
     cartItems: state.cartData,
-    currency: state.currencyData
+    currency: state.currencyData,
   };
 };
 

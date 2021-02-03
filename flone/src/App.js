@@ -108,6 +108,7 @@ const Compare = lazy(() => import("./pages/other/Compare"));
 const Checkout = lazy(() => import("./pages/other/Checkout"));
 
 const NotFound = lazy(() => import("./pages/other/NotFound"));
+const PaymentStatus = lazy(() => import("./pages/other/PaymentStatus"));
 
 const App = (props) => {
   useEffect(() => {
@@ -420,6 +421,11 @@ const App = (props) => {
                 <Route
                   path={process.env.PUBLIC_URL + "/not-found"}
                   component={NotFound}
+                />
+
+                <Route
+                  path={process.env.PUBLIC_URL + "/payment-status"}
+                  component={PaymentStatus}
                 />
 
                 <Route exact component={NotFound} />

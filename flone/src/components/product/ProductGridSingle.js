@@ -6,6 +6,8 @@ import { getDiscountPrice } from "../../helpers/product";
 import Rating from "./sub-components/ProductRating";
 import ProductModal from "./ProductModal";
 
+// import {useGetImage} from "../../hooks/useGetImage"
+
 const ProductGridSingle = ({
   product,
   currency,
@@ -18,6 +20,8 @@ const ProductGridSingle = ({
   sliderClassName,
   spaceBottomClass
 }) => {
+
+  // const imageR = useGetImage()
   const [modalShow, setModalShow] = useState(false);
   const { addToast } = useToasts();
 
@@ -42,12 +46,14 @@ const ProductGridSingle = ({
               <img
                 className="default-img"
                 src={process.env.PUBLIC_URL + product.image[0]}
+                // src={imageR}
                 alt=""
               />
               {product.image.length > 1 ? (
                 <img
                   className="hover-img"
                   src={process.env.PUBLIC_URL + product.image[1]}
+                  // src={imageR}
                   alt=""
                 />
               ) : (

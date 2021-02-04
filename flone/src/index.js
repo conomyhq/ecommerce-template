@@ -8,7 +8,7 @@ import { save, load } from "redux-localstorage-simple";
 import { Provider } from "react-redux";
 import { fetchProducts } from "./redux/actions/productActions";
 import rootReducer from "./redux/reducers/rootReducer";
-import products from "./data/products.json";
+import products from "./data/products";
 import App from "./App";
 import "./assets/scss/style.scss";
 import * as serviceWorker from "./serviceWorker";

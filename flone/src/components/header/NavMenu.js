@@ -38,7 +38,7 @@ const NavMenu = ({ strings, menuWhiteClass, sidebarMenu }) => {
                       {strings["home_fashion"]}
                     </Link>
                   </li>
-                  <li>
+                  {/* <li>
                     <Link to={process.env.PUBLIC_URL + "/home-fashion-two"}>
                       {strings["home_fashion_two"]}
                     </Link>
@@ -72,7 +72,7 @@ const NavMenu = ({ strings, menuWhiteClass, sidebarMenu }) => {
                     <Link to={process.env.PUBLIC_URL + "/home-fashion-eight"}>
                       {strings["home_fashion_eight"]}
                     </Link>
-                  </li>
+                  </li> */}
                   <li>
                     <Link to={process.env.PUBLIC_URL + "/home-kids-fashion"}>
                       {strings["home_kids_fashion"]}
@@ -88,7 +88,7 @@ const NavMenu = ({ strings, menuWhiteClass, sidebarMenu }) => {
                       {strings["home_furniture"]}
                     </Link>
                   </li>
-                  <li>
+                  {/* <li>
                     <Link to={process.env.PUBLIC_URL + "/home-furniture-two"}>
                       {strings["home_furniture_two"]}
                     </Link>
@@ -102,7 +102,7 @@ const NavMenu = ({ strings, menuWhiteClass, sidebarMenu }) => {
                     <Link to={process.env.PUBLIC_URL + "/home-furniture-four"}>
                       {strings["home_furniture_four"]}
                     </Link>
-                  </li>
+                  </li> */}
                 </ul>
               </li>
               <li>
@@ -112,7 +112,7 @@ const NavMenu = ({ strings, menuWhiteClass, sidebarMenu }) => {
                       {strings["home_group_two"]}
                     </Link>
                   </li>
-                  <li>
+                  {/* <li>
                     <Link to={process.env.PUBLIC_URL + "/home-furniture-five"}>
                       {strings["home_furniture_five"]}
                     </Link>
@@ -126,13 +126,13 @@ const NavMenu = ({ strings, menuWhiteClass, sidebarMenu }) => {
                     <Link to={process.env.PUBLIC_URL + "/home-furniture-seven"}>
                       {strings["home_furniture_seven"]}
                     </Link>
-                  </li>
+                  </li> */}
                   <li>
                     <Link to={process.env.PUBLIC_URL + "/home-electronics"}>
                       {strings["home_electronics"]}
                     </Link>
                   </li>
-                  <li>
+                  {/* <li>
                     <Link to={process.env.PUBLIC_URL + "/home-electronics-two"}>
                       {strings["home_electronics_two"]}
                     </Link>
@@ -143,17 +143,17 @@ const NavMenu = ({ strings, menuWhiteClass, sidebarMenu }) => {
                     >
                       {strings["home_electronics_three"]}
                     </Link>
-                  </li>
+                  </li> */}
                   <li>
                     <Link to={process.env.PUBLIC_URL + "/home-book-store"}>
                       {strings["home_book_store"]}
                     </Link>
                   </li>
-                  <li>
+                  {/* <li>
                     <Link to={process.env.PUBLIC_URL + "/home-book-store-two"}>
                       {strings["home_book_store_two"]}
                     </Link>
-                  </li>
+                  </li> */}
                   <li>
                     <Link to={process.env.PUBLIC_URL + "/home-plants"}>
                       {strings["home_plants"]}
@@ -164,17 +164,17 @@ const NavMenu = ({ strings, menuWhiteClass, sidebarMenu }) => {
                       {strings["home_flower_shop"]}
                     </Link>
                   </li>
-                  <li>
+                  {/* <li>
                     <Link to={process.env.PUBLIC_URL + "/home-flower-shop-two"}>
                       {strings["home_flower_shop_two"]}
                     </Link>
-                  </li>
+                  </li> */}
                   <li>
                     <Link to={process.env.PUBLIC_URL + "/home-organic-food"}>
                       {strings["home_organic_food"]}
                     </Link>
                   </li>
-                  <li>
+                  {/* <li>
                     <Link
                       to={process.env.PUBLIC_URL + "/home-organic-food-two"}
                     >
@@ -185,7 +185,7 @@ const NavMenu = ({ strings, menuWhiteClass, sidebarMenu }) => {
                     <Link to={process.env.PUBLIC_URL + "/home-onepage-scroll"}>
                       {strings["home_onepage_scroll"]}
                     </Link>
-                  </li>
+                  </li> */}
                 </ul>
               </li>
               <li>
@@ -195,11 +195,11 @@ const NavMenu = ({ strings, menuWhiteClass, sidebarMenu }) => {
                       {strings["home_group_three"]}
                     </Link>
                   </li>
-                  <li>
+                  {/* <li>
                     <Link to={process.env.PUBLIC_URL + "/home-grid-banner"}>
                       {strings["home_grid_banner"]}
                     </Link>
-                  </li>
+                  </li> */}
                   <li>
                     <Link to={process.env.PUBLIC_URL + "/home-auto-parts"}>
                       {strings["home_auto_parts"]}
@@ -237,13 +237,13 @@ const NavMenu = ({ strings, menuWhiteClass, sidebarMenu }) => {
                       {strings["home_black_friday"]}
                     </Link>
                   </li>
-                  <li>
+                  {/* <li>
                     <Link
                       to={process.env.PUBLIC_URL + "/home-black-friday-two"}
                     >
                       {strings["home_black_friday_two"]}
                     </Link>
-                  </li>
+                  </li> */}
                   <li>
                     <Link to={process.env.PUBLIC_URL + "/home-valentines-day"}>
                       {strings["home_valentines_day"]}
@@ -323,7 +323,7 @@ const NavMenu = ({ strings, menuWhiteClass, sidebarMenu }) => {
                 </ul>
               </li>
               <li>
-                <ul>
+                {/* <ul>
                   <li className="mega-menu-title">
                     <Link to={process.env.PUBLIC_URL + "/product/1"}>
                       {strings["product_details"]}
@@ -376,7 +376,7 @@ const NavMenu = ({ strings, menuWhiteClass, sidebarMenu }) => {
                       {strings["product_affiliate"]}
                     </Link>
                   </li>
-                </ul>
+                </ul> */}
               </li>
               <li>
                 <ul>
@@ -384,8 +384,9 @@ const NavMenu = ({ strings, menuWhiteClass, sidebarMenu }) => {
                     <Link to={process.env.PUBLIC_URL + "/shop-grid-standard"}>
                       <img
                         src={
-                          process.env.PUBLIC_URL +
-                          "/assets/img/banner/banner-12.png"
+                          // process.env.PUBLIC_URL +
+                          // "/assets/img/banner/banner-12.png"
+                            'https://picsum.photos/id/1060/201/366'
                         }
                         alt=""
                       />
@@ -400,7 +401,7 @@ const NavMenu = ({ strings, menuWhiteClass, sidebarMenu }) => {
               {strings["collection"]}
             </Link>
           </li>
-          <li>
+          {/* <li>
             <Link to={process.env.PUBLIC_URL + "/"}>
               {strings["pages"]}
               {sidebarMenu ? (
@@ -458,8 +459,15 @@ const NavMenu = ({ strings, menuWhiteClass, sidebarMenu }) => {
                 </Link>
               </li>
             </ul>
-          </li>
+          </li> */}
+
           <li>
+            <Link to={process.env.PUBLIC_URL + "/blog-standard"}>
+              {strings["blog"]}
+            </Link>
+          </li>
+
+          {/* <li>
             <Link to={process.env.PUBLIC_URL + "/blog-standard"}>
               {strings["blog"]}
               {sidebarMenu ? (
@@ -492,7 +500,7 @@ const NavMenu = ({ strings, menuWhiteClass, sidebarMenu }) => {
                 </Link>
               </li>
             </ul>
-          </li>
+          </li> */}
           <li>
             <Link to={process.env.PUBLIC_URL + "/contact"}>
               {strings["contact_us"]}

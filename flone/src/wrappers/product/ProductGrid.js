@@ -25,7 +25,7 @@ const ProductGrid = ({
         product.image = [
           'https://picsum.photos/id/0/600/800',
           'https://picsum.photos/id/1/600/800',
-          'https://picsum.photos/id/1060/600/800',
+          'https://picsum.photos/id/180/600/800',
           'https://picsum.photos/id/119/600/800',
         ]
         return (
